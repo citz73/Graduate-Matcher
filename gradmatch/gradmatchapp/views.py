@@ -6,3 +6,7 @@ from django.http import HttpResponse
 
 def index(request):
     return HttpResponse("This is the gradmatchapp homepage")
+
+
+def detail(request):
+    return HttpResponse("This is the detailed page")
