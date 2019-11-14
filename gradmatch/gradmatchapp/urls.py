@@ -4,5 +4,5 @@ from gradmatchapp import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('detail/', views.detail, name='detail'),
+    path('<int:deadline_id>/', views.detail, name='detail'),
 ]

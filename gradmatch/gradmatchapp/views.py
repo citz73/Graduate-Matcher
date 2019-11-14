@@ -11,5 +11,5 @@ def index(request):
     return HttpResponse(output)
 
 
-def detail(request):
-    return HttpResponse("This is the detailed page")
+def detail(request, deadline_id):
+    return HttpResponse("This is deadline number {}".format(deadline_id))
