@@ -1,14 +1,18 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Deadline
+from django.template import loader
 
 
 # Create your views here.
 
 def index(request):
     deadline_list = Deadline.objects.all()
-    output = ','.join(deadline.name for deadline in deadline_list)
-    return HttpResponse(output)
+    template = loader.get_template('gradmatchapp/index.html')
+    context = {
+        'deadline_list': deadline_list
+    }
+    return HttpResponse(template.render(context, request))
 
 
 def detail(request, deadline_id):

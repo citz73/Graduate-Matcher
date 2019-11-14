@@ -1,0 +1,10 @@
+{% if deadline_list %}
+<ul>
+    {% for deadline in deadline_list %}
+    <li>
+        <a href="#">{{deadline.name}}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+{% endif %}
