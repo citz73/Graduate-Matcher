@@ -1,0 +1,16 @@
+<!-- {% extends 'gradmatchapp/base.html' %} -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	{% block body %}
+	<p>testing this garbage</p>
+	{% for location in object_list %}
+		<a href="#">{{location.location_name}}</a>
+	{% endfor %}
+	{% endblock %}
+</body>
+</html>

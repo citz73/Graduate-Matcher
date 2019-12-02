@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	{% for school in location.property_set.all %}
+		{{ school.school_name }}
+	{% endfor %}
+</body>
+</html>
