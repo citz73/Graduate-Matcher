@@ -1,5 +1,6 @@
 {% extends 'gradmatchapp/base.html' %}
 
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -8,8 +9,8 @@
 	<body>
 		{% block body %}
 			<div class="container-fluid">
-				{% for location in object_list %}
-					<a href="#">{{location.location_name}}</a></br>
+				{% for school in location.school_set.all %}
+					{{ school.school_name }}
 				{% endfor %}
 			</div>
 		{% endblock %}

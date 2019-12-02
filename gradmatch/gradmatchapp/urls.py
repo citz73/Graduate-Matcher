@@ -9,5 +9,6 @@ app_name = 'gradmatchapp'
 urlpatterns = [
     path('', views.IndexView.as_view(), name='index'),
     path('<int:deadline_id>/', views.DetailView.as_view(), name='detail'),
-    path('schools', views.SchoolView.as_view(), name='schoolview'),
+    path('locations', views.LocationsView.as_view(), name='locations'),
+    path('location<slug:pk>', views.LocationView.as_view(), name='location'),
 ]

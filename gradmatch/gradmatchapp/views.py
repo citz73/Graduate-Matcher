@@ -9,11 +9,16 @@ class IndexView(generic.ListView):
 		return Deadline.objects.all()
 
 
-class SchoolView(generic.ListView):
-	template_name = 'gradmatchapp/schoolview.html'
+class LocationsView(generic.ListView):
+	template_name = 'gradmatchapp/locations.html'
 
 	def get_queryset(self):
 		return Location.objects.all()
+
+
+class LocationView(generic.DetailView):
+	model = Location
+	template_name = 'gradmatchapp/location.html'
 
 
 class DetailView(generic.DetailView):
