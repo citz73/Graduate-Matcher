@@ -10,5 +10,6 @@ urlpatterns = [
     path('', views.IndexView.as_view(), name='index'),
     path('<int:deadline_id>/', views.DetailView.as_view(), name='detail'),
     path('locations', views.LocationsView.as_view(), name='locations'),
-    path('location<slug:pk>', views.LocationView.as_view(), name='location'),
+    path('locations/<slug:pk>', views.LocationView.as_view(), name='location'),
+    path('locations/<slug:pk>/<int:school_id>', views.SchoolDetail.as_view(), name='schoolview'),
 ]

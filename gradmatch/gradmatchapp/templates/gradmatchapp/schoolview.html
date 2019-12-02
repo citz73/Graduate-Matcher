@@ -9,9 +9,8 @@
 	<body>
 		{% block body %}
 			<div class="container-fluid">
-				{% for location in object_list %}
-					<a href="locations/{{location.id}}">{{location.location_name}}</a></br>
-				{% endfor %}
+				<h1>{{ school.school_name }}</h1>
+				<h1>{{ school.area }}</h1>
 			</div>
 		{% endblock %}
 	</body>

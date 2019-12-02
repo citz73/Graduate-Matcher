@@ -1,5 +1,5 @@
 from django.views import generic
-from .models import Deadline, Location
+from .models import Deadline, Location, School
 
 
 class IndexView(generic.ListView):
@@ -18,9 +18,14 @@ class LocationsView(generic.ListView):
 
 class LocationView(generic.DetailView):
 	model = Location
-	template_name = 'gradmatchapp/location.html'
+	template_name = 'gradmatchapp/locationview.html'
+
+
+class SchoolDetail(generic.DetailView):
+	model = School
+	template_name = 'gradmatchapp/schoolview.html'
 
 
 class DetailView(generic.DetailView):
 	model = Deadline
-	template_name = 'gradmatchapp/detail.html'
+	template_name = 'gradmatchapp/detailview.html'
