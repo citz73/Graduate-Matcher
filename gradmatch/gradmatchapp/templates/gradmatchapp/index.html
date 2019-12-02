@@ -19,7 +19,7 @@
 				</thead>
 				<tbody>
 					{% if deadline_list %}
-						{% for deadline in deadline_list %}
+						{% for deadline in object_list %}
 							<tr class="active">
 								<td><a href="{% url 'gradmatchapp:detail' deadline.id %}">{{deadline.id}}</a></td>
 								<td><b>{{deadline.name}}</b></td>

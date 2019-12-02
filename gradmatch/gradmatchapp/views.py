@@ -1,28 +1,14 @@
-from django.shortcuts import render
-from django.http import HttpResponse, Http404
+from django.views import generic
 from .models import Deadline
-from django.template import loader
 
 
-# Create your views here.
+class IndexView(generic.ListView):
+	template_name = 'gradmatchapp/index.html'
 
-def index(request):
-    deadline_list = Deadline.objects.all()
-
-    context = {
-        'deadline_list': deadline_list
-    }
-    return render(request, 'gradmatchapp/index.html', context)
+	def get_queryset(self):
+		return Deadline.objects.all()
 
 
-def detail(request, deadline_id):
-	try:
-		# get the deadline, pk is primary key
-		deadline = Deadline.objects.get(pk=deadline_id)
-	except Deadline.DoesNotExist:
-		raise Http404('Deadline does not exist.')
-
-	context = {
-		'deadline': deadline,
-	}
-	return render(request, 'gradmatchapp/detail.html', context)
+class DetailView(generic.DetailView):
+	model = Deadline
+	template_name = 'gradmatchapp/detail.html'
