@@ -8,11 +8,11 @@ from django.template import loader
 
 def index(request):
     deadline_list = Deadline.objects.all()
-    template = loader.get_template('gradmatchapp/index.html')
+    
     context = {
         'deadline_list': deadline_list
     }
-    return HttpResponse(template.render(context, request))
+    return render(request, 'gradmatchapp/index.html', context)
 
 
 def detail(request, deadline_id):
