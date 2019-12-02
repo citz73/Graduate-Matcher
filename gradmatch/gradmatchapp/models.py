@@ -26,5 +26,10 @@ class School(models.Model):
 		return self.school_name
 
 	location = models.ForeignKey(Location, on_delete=models.CASCADE)
-	school_name = models.CharField(max_length=200)
-	area = models.CharField(max_length=200)
+	school_name = models.CharField(max_length=200, default="")
+	area = models.CharField(max_length=200, default="")
+	tuition = models.CharField(max_length=200, default="")
+	acceptance_rate = models.CharField(max_length=200, default="")
+	graduation_rate = models.CharField(max_length=200, default="")
+	student_pop = models.CharField(max_length=200, default="")
+	image_url = models.CharField(max_length=200, default="")
