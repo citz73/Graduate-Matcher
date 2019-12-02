@@ -1,10 +1,22 @@
-{% if deadline_list %}
-<ul>
-    {% for deadline in deadline_list %}
-    <li>
-        <a href="{% url 'gradmatchapp:detail' deadline.id %}">{{deadline.name}}</a>
-    </li>
-    {% endfor %}
-</ul>
-{% else %}
-{% endif %}
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+
+		<link rel="stylesheet" type="text/css" href="{% static 'gradmatchapp/style.css' %}">
+	</head>
+	<body>
+		{% if deadline_list %}
+			<ul>
+			    {% for deadline in deadline_list %}
+				    <li>
+				        <a href="{% url 'gradmatchapp:detail' deadline.id %}">{{deadline.name}}</a>
+				    </li>
+			    {% endfor %}
+			</ul>
+		{% else %}
+		{% endif %}
+	</body>
+</html>
