@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
 from .models import Deadline
 from django.template import loader
 
@@ -16,8 +16,12 @@ def index(request):
 
 
 def detail(request, deadline_id):
-	# get the deadline, pk is primary key
-	deadline = Deadline.objects.get(pk=deadline_id)
+	try:
+		# get the deadline, pk is primary key
+		deadline = Deadline.objects.get(pk=deadline_id)
+	except Deadline.DoesNotExist:
+		raise Http404('Deadline does not exist.')
+
 	context = {
 		'deadline': deadline,
 	}
