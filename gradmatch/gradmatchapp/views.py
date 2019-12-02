@@ -8,7 +8,7 @@ from django.template import loader
 
 def index(request):
     deadline_list = Deadline.objects.all()
-    
+
     context = {
         'deadline_list': deadline_list
     }
@@ -16,4 +16,9 @@ def index(request):
 
 
 def detail(request, deadline_id):
-    return HttpResponse("This is deadline number {}".format(deadline_id))
+	# get the deadline, pk is primary key
+	deadline = Deadline.objects.get(pk=deadline_id)
+	context = {
+		'deadline': deadline,
+	}
+	return render(request, 'gradmatchapp/detail.html', context)
