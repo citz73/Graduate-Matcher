@@ -1,5 +1,5 @@
 from django.views import generic
-from .models import Deadline
+from .models import Deadline, Location
 
 
 class IndexView(generic.ListView):
@@ -7,6 +7,13 @@ class IndexView(generic.ListView):
 
 	def get_queryset(self):
 		return Deadline.objects.all()
+
+
+class SchoolsView(generic.ListView):
+	template_name = 'gradmatchapp/schools.html'
+
+	def get_queryset(self):
+		return Location.objects.all()
 
 
 class DetailView(generic.DetailView):
