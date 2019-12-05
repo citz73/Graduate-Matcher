@@ -8,3 +8,26 @@ body {
     margin: 100px auto;
     float: none;
 }
+
+.button {
+    border: 1px solid green;
+    border-radius: 2px;
+    position: relative;
+    margin-top: -163px;
+    float: right;
+}
+
+.button:hover {
+    background: green;
+    color: white;
+}
+
+.searchBar {
+    border: 1px solid green;
+    border-radius: 2px;
+    position: relative;
+    margin-top: -163px;
+    margin-right: 68px;
+    float: right;
+}
+
