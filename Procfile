@@ -1,0 +1,1 @@
+web: gunicorn gradmatch.wsgi --log-file -
