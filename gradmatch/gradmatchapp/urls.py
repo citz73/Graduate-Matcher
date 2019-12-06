@@ -12,4 +12,6 @@ urlpatterns = [
     path('locations', views.LocationsView.as_view(), name='locations'),
     path('locations/<slug:pk>', views.LocationView.as_view(), name='location'),
     path('locations/<slug:pk>/<int:school_id>', views.SchoolDetail.as_view(), name='schoolview'),
+    path('', include('django.contrib.auth.urls')),
+    
 ]
