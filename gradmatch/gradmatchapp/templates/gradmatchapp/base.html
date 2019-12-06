@@ -27,20 +27,29 @@
 					<li class="nav-item">
 						<a class="nav-link" href="#">Link 3</a>
 					</li>
+					<li>
+						<a class="nav-link" href="#">Sign Up</a>
+					</li>
+					<li>
+						<a class="nav-link" href="#">Login</a>
+					</li>
 				</ul>
-	
+
 			</div>
 		</nav>
+		<!-- Reference: calazan.com/adding-basic-search-to-your-djang-site/-->
+		<div class="searchBar">
+			<form id = "searchform" action="{% url 'locations/{{location.id}}' %" method="get" accept-carset="utf-8">
+				<input class="searchfield" id="searchbox" name="q" type="text" placeholder="Search Schools..."></input>
+				<button type="submit" style="background-color:rgb(80, 167, 207)">Submit
+					<i class="fa fa-search"></i>
+				</button>
+			</form>
+		</div>
 		
 		{% block body %}
 		{% endblock %}
+		
 	</body>
-	<div class="button">
-		<button type="submit" style="background-color:rgb(80, 167, 207)">Submit</button>
-	</div>
-
-	<div class="searchBar">
-		<input type="text" placeholder="Search Schools..." name="search">
-	</div>	
 
 </html>
