@@ -1,1 +1,1 @@
-web: gunicorn gradmatch.wsgi --log-file -
+web: gunicorn OOAD_Fall2019_FinalProject.wsgi --log-file -
