@@ -1,0 +1,1 @@
+web: gunicorn safe-temple-73383.wsgi —-log-file -
