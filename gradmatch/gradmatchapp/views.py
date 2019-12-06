@@ -1,7 +1,7 @@
 from django.views import generic
 from .models import Deadline, Location, School
-from rest_framework import filters
-from rest_framework.permissions import 	IsAuthenticated
+# from rest_framework import filters
+# from rest_framework.permissions import 	IsAuthenticated
 
 
 class IndexView(generic.ListView):
