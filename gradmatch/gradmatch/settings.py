@@ -25,7 +25,7 @@ SECRET_KEY = 'z1yuhx887holuzm6%9+uu-g9ak_qb3&q1lasaj7wmi@i0$h0#+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0', 'localhost', 'https://safe-temple-73383.herokuapp.com/']
+ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1', 'localhost', 'https://safe-temple-73383.herokuapp.com/']
 
 
 # Application definition
