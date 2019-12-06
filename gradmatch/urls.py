@@ -20,4 +20,5 @@ from django.conf.urls import include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('gradmatchapp/', include('gradmatchapp.urls')),
+    path('https://protected-refuge-53875.herokuapp.com/', include('gradmatchapp.urls')),
 ]
