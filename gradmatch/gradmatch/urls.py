@@ -19,5 +19,6 @@ from django.conf.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('gradmatchapp/', include('gradmatchapp.urls'))
+    path('gradmatchapp/', include('gradmatchapp.urls')),
+    path('gradmatchapp/', include('django.contrib.auth.urls')),
 ]

@@ -1,5 +1,7 @@
 from django.views import generic
 from .models import Deadline, Location, School
+from rest_framework import filters
+from rest_framework.permissions import 	IsAuthenticated
 
 
 class IndexView(generic.ListView):
@@ -29,3 +31,8 @@ class SchoolDetail(generic.DetailView):
 class DetailView(generic.DetailView):
 	model = Deadline
 	template_name = 'gradmatchapp/detailview.html'
+
+# class UserView(generic.DetailView):
+    
+# 	model = 
+# 	template_name = 'gradmatchapp/'
