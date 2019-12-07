@@ -1,0 +1,26 @@
+{% extends 'gradmatchapp/base.html' %}
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		{% block body %}
+			<div class="container-fluid">
+				<h1>Locations</h1>
+				<div class="locations">
+					{% for location in object_list %}
+						<li class="a">
+							<span>
+								<a href="locations/{{location.id}}">
+									{{location.location_name}}
+								</a></br>
+							</span>
+						</li>
+						{% endfor %}
+				</div>
+			</div>
+		{% endblock %}
+	</body>
+</html>
