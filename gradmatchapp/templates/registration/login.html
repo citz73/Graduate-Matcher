@@ -4,18 +4,20 @@
 {% block body %}
 <html>
 	<head>
-		<h2> Login </h2>
+		<title></title>
 	</head>
 	<body>
-		<form method = "post">
-		{% csrf_token %}
-		{{form.as_p}}
-		<button type = "submit">Login</button>
-		</form>
-
+		<div class="container-fluid">
+			<h1> Login </h1>
+			<div class="login_specs">
+				<form method = "post">
+					{% csrf_token %}
+					{{form.as_p}}
+				<button type = "submit" style="background-color:rgb(80, 167, 207)">Login</button>
+				</form>
+			</div>
+		</div>
 	</body>
-
-
 </html>
 
 {% endblock %}

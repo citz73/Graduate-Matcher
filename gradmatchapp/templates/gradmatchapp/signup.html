@@ -2,10 +2,21 @@
 
 <!DOCTYPE html>
 {% block body %}
-<h2> Sign Up </h2>
-<form method = "post">
-	{% csrf_token %}
-	{{form.as_p}}
-	<button type = "submit">Sign Up</button>
-</form>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<h1> Sign Up </h1>
+			<div class="signup_specs">
+				<form method = "post">
+					{% csrf_token %}
+					{{form.as_p}}
+					<button type = "submit" style="background-color:rgb(80, 167, 207)">Sign Up</button>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>
 {% endblock %}
