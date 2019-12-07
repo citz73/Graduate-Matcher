@@ -80,7 +80,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'sample_database',
         'USER': 'sample_user',
-        'PASSWORD': 'sample_password',
+        'PASSWORD': 'gradmatchapp',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
