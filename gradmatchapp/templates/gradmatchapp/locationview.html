@@ -9,9 +9,18 @@
 	<body>
 		{% block body %}
 			<div class="container-fluid">
-				{% for school in location.school_set.all %}
-					<a href="/gradmatchapp/locations/{{location.id}}/{{school.id}}">{{ school.school_name }}</a>
-				{% endfor %}
+				<h1>Schools</h1>
+				<div class="schools">
+					{% for school in location.school_set.all %}
+						<li class="a">
+							<span>
+								<a href="/gradmatchapp/locations/{{location.id}}/{{school.id}}">
+									{{ school.school_name }}
+								</a></br>
+							</span>
+						</li>
+					{% endfor %}
+				</div>
 			</div>
 		{% endblock %}
 	</body>
