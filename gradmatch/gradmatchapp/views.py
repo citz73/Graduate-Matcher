@@ -1,4 +1,6 @@
 from django.views import generic
+from django.urls import reverse_lazy
+from django.contrib.auth.forms import UserCreationForm
 from .models import Deadline, Location, School
 # from rest_framework import filters
 # from rest_framework.permissions import 	IsAuthenticated
@@ -31,6 +33,13 @@ class SchoolDetail(generic.DetailView):
 class DetailView(generic.DetailView):
 	model = Deadline
 	template_name = 'gradmatchapp/detailview.html'
+
+class SignUpView(generic.CreateView):
+		form_class = UserCreationForm
+		success_url = reverse_lazy('gradmatchapp:login')
+		template_name = 'gradmatchapp/signup.html'
+
+
 
 # class UserView(generic.DetailView):
     
