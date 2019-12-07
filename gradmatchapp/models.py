@@ -33,3 +33,12 @@ class School(models.Model):
 	graduation_rate = models.CharField(max_length=200, default="")
 	student_pop = models.CharField(max_length=200, default="")
 	image_url = models.CharField(max_length=200, default="")
+
+class User(models.Model):
+	
+	def __str__(self):
+		return self.user_name
+
+	user_name = models.CharField(max_length=200, default="")
+	school_name = models.CharField(max_length=200, default="")
+

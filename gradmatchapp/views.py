@@ -1,7 +1,7 @@
 from django.views import generic
 from django.urls import reverse_lazy
 from django.contrib.auth.forms import UserCreationForm
-from .models import Deadline, Location, School
+from .models import Deadline, Location, School, User
 # from rest_framework import filters
 # from rest_framework.permissions import 	IsAuthenticated
 
@@ -38,6 +38,10 @@ class SignUpView(generic.CreateView):
 		form_class = UserCreationForm
 		success_url = reverse_lazy('gradmatchapp:login')
 		template_name = 'gradmatchapp/signup.html'
+
+class UserView(generic.ListView):
+    	model = User
+    	template_name = 'gradmatchapp/profile.html'
 
 
 
