@@ -1,11 +1,11 @@
 body {
-    background: white url("background.jpg") no-repeat center center fixed;
+    background: url("background.jpg") no-repeat center center fixed;
     background-size: cover; 
 }
 
 .table {
     border-radius: 10px;
-    margin: 100px auto;
+    margin: 50px auto;
     float: none;
 }
 
@@ -19,6 +19,11 @@ body {
 .white-box{
     background-color: white;
     color: black;
+}
+
+.profile {
+    background-color: white;
+    margin: 50px 75px;
 }
 
 h1{
