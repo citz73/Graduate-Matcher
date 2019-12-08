@@ -7,19 +7,20 @@
 	</head>
 	<body>
 		{% block body %}
-			<div class="container-fluid">
-				<h1>States</h1>
-				<div class="locations">
+			<div class="container" id="locations">
+				<h1>Pick your State</h1>
+				<table>
+					<tr><th>States</th></tr>
 					{% for location in object_list %}
-						<li class="a">
-							<span>
-								<a href="locations/{{location.id}}">
-									{{location.location_name}}
-								</a></br>
-							</span>
-						</li>
-						{% endfor %}
-				</div>
+					<tr>
+						<td>
+							<a href="locations/{{location.id}}">
+								{{location.location_name}}
+							</a></br>
+						</td>
+					</tr>
+					{% endfor %}
+				</table>
 			</div>
 		{% endblock %}
 	</body>
