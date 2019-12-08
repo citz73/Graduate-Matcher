@@ -14,6 +14,6 @@ urlpatterns = [
     path('locations/<slug:pk>', views.LocationView.as_view(), name='location'),
     path('locations/<slug:pk>/<int:school_id>', views.SchoolDetail.as_view(), name='schoolview'),
     path('signup', views.SignUpView.as_view(), name= 'signup'),
-    path('profile', views.UserView.as_view(), name = 'profile'),
+    path('profile', views.listUserSchool, name = 'profile'),
     
 ]

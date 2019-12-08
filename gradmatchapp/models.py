@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 # Create your models here.
@@ -26,6 +27,7 @@ class School(models.Model):
 		return self.school_name
 
 	location = models.ForeignKey(Location, on_delete=models.CASCADE)
+	user = models.ManyToManyField(User)
 	school_name = models.CharField(max_length=200, default="")
 	area = models.CharField(max_length=200, default="")
 	tuition = models.CharField(max_length=200, default="")
@@ -34,11 +36,13 @@ class School(models.Model):
 	student_pop = models.CharField(max_length=200, default="")
 	image_url = models.CharField(max_length=200, default="")
 
-class User(models.Model):
+# class User(models.Model):
 	
-	def __str__(self):
-		return self.user_name
+# 	def __str__(self):
+# 		return self.user_name
 
-	user_name = models.CharField(max_length=200, default="")
-	school_name = models.CharField(max_length=200, default="")
+# 	user = models.ForeignKey(models.user, on_delete=models.CASCADE)
+# 	user_name = models.CharField(user.username,max_length=200, default="")
+# 	email_address = models.CharField(max_length=200, default="")
+
 
