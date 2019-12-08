@@ -1,0 +1,16 @@
+{% extends 'gradmatchapp/base.html' %}
+
+<!DOCTYPE html>
+{% block body %}
+<html>
+	<head> User Profile </head>
+	<body> 
+		<div class = "list">
+			<h2> School List </h2>
+			{% for object in user_list %}
+			<li> {{object.school_name}}</li>
+			{% endfor %}
+		</div>
+	</body>
+</html>
+{% endblock %}
