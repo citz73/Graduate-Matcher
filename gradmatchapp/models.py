@@ -20,14 +20,12 @@ class Location(models.Model):
 	location_name = models.CharField(max_length=200)
 	location_type = models.CharField(max_length=200)
 
-
 class School(models.Model):
 
 	def __str__(self):
 		return self.school_name
 
 	location = models.ForeignKey(Location, on_delete=models.CASCADE)
-	user = models.ManyToManyField(User)
 	school_name = models.CharField(max_length=200, default="")
 	area = models.CharField(max_length=200, default="")
 	tuition = models.CharField(max_length=200, default="")
@@ -35,6 +33,17 @@ class School(models.Model):
 	graduation_rate = models.CharField(max_length=200, default="")
 	student_pop = models.CharField(max_length=200, default="")
 	image_url = models.CharField(max_length=200, default="")
+
+class UserProfile(models.Model):
+    
+	def __str__(self):
+    		return self.user.username
+   
+	user = models.OneToOneField(User, on_delete=models.CASCADE)
+	school = models.ManyToManyField(School)
+
+class Test(models.Model):
+    test = models.CharField(max_length=200, default="")
 
 # class User(models.Model):
 	
