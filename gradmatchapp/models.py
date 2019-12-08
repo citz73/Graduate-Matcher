@@ -41,6 +41,9 @@ class UserProfile(models.Model):
    
 	user = models.OneToOneField(User, on_delete=models.CASCADE)
 	school = models.ManyToManyField(School)
+	major = models.CharField(max_length=200, default="")
+	expected_Enrollment_date = models.CharField(max_length=20, deault="")
+
 
 class Test(models.Model):
     test = models.CharField(max_length=200, default="")
