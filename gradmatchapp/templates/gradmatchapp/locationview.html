@@ -9,19 +9,10 @@
 	<body>
 		{% block body %}
 			<div class="container" id="locations_view">
-				<h1>Pick your School</h1>
-				<!-- Reference: calazan.com/adding-basic-search-to-your-djang-site/-->
-				<div class="searchBar">
-					<form id = "searchform" action="{% url 'locations/{{location.id}}' %" method="get" accept-carset="utf-8">
-						<input class="searchfield" id="searchbox" name="q" type="text" placeholder="Search Schools..."></input>
-						<button type="submit" id="submit">Submit<i class="fa fa-search"></i>
-						</button>
-					</form>
-				</div>
 				<table>
 					<tr><th>Schools</th></tr>
 					{% for school in location.school_set.all %}
-						<tr>
+						<tr id="schools">
 							<td>
 								<a href="/gradmatchapp/locations/{{location.id}}/{{school.id}}">
 									{{ school.school_name }}

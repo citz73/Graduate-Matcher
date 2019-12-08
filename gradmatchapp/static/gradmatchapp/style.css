@@ -38,12 +38,12 @@ table {
 }
 
 td, th {
-    border: 1px solid #dddddd;
+    border: 1px solid white;
     text-align: left;
     padding: 8px;
 }
 
-tr:nth-child(even){
+#schools:nth-child(even){
     background-color: #dddddd;
 }
 
