@@ -53,20 +53,17 @@ li.a span{
     text-shadow: -2px -2px black, 2px -2px black, -2px 2px black, 2px 2px black;
 }
 
-#login_page {
-    background: white;
-}
-
 #login_form {
-    width: 50%;
-    height: 50%;
-    margin: 50px auto;
+    width: 500px;
+    height: auto;
+    margin: 200px auto;
     padding: 20px;
     border-style: solid;
     border-width: thin;
     text-align: center;
     float: center;
     display: block;
+    background: white;
 }
 
 #login_button {
