@@ -6,19 +6,31 @@
 	<head>
 		<title></title>
 	</head>
-	<body id="login_page">
-		<div class="container">
-			<div class="col-sm-6">
-				<div class="panel panel-default">
-					<div class="panel-heading">Sign in</div>
-					<div class="panel-body">
-						<form method="post">
-							{% csrf_token %}
-							{{ form.as_p }}
-							<input type="submit" name="login">
-						</form>
-					</div>
-				</div>
+	<body>
+		<div class="container" id="login_page">
+			<div class="col login_form">
+		        <form class="form-horizontal" name="LoginForm" action="/login/" method="post">
+			        {% csrf_token %}
+			        {% if next %}
+			            <input type="hidden" name="next" value="{{ next }}" />
+			        {% endif %}
+			        <div class="control-group">
+			            <div class="controls">
+			                <input type="text" id="username" name="username"  placeholder="Username">
+			            </div>
+			        </div>
+			        <div class="control-group">
+			            <div class="controls">
+			                <input type="password" name="password" id="password" placeholder="Password">
+			            </div>
+			        </div>
+			        <div class="control-group">
+			            <div class="controls">
+			                <button type="submit" class="btn">Login</button>
+			            </div>
+			        </div>
+		        </form>
+					    
 			</div>
 		</div>		
 	</body>
