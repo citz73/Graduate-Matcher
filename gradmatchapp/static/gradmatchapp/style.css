@@ -1,6 +1,6 @@
 body {
     background: url("background.jpg") no-repeat center center fixed;
-    background-size: cover; 
+    background-size: cover;
 }
 
 .table {
@@ -68,35 +68,39 @@ tr:nth-child(even){
 
 }
 
-#login_form {
-    width: 500px;
+#login_page {
+    width: 30%;
     height: auto;
-    margin: 200px auto;
+    margin: 300px auto;
     padding: 20px;
+    background: white;
+    text-align: center;
     border-style: solid;
     border-width: thin;
-    text-align: center;
-    float: center;
-    display: block;
+}
+
+#signup_page {
+    width: auto;
+    height: auto;
+    margin: 300px auto;
+    padding: 20px;
     background: white;
-}
-
-#login_button {
-    width: 90%;
-    background-color: DeepSkyBlue;
-    margin: 0px auto;
     text-align: center;
-    display: block;
+    border-style: solid;
+    border-width: thin;
 }
 
-#submit {
-    background-color: DeepSkyBlue;
+#username {
+    width: 100%;
+    margin: 10px auto;
 }
 
-#id_username {
-    width: 90%;
+#password {
+    width: 100%;
 }
 
-#id_password {
-    width: 90%;
+.btn {
+    background-color: DeepSkyBlue !important;
+    margin: 20px auto;
+    width: 100%;
 }
