@@ -8,24 +8,18 @@
 	</head>
 	<body id="login_page">
 		<div class="container" id="login_form">
-				<h1> Sign Up </h1>
-				<form method = "post">
-					{% csrf_token %}
-					<form method="post">
-						<input type="hidden" name="csrfmiddlewaretoken" value="1nBad5qPHELa0IVQ9vYXEg4YEcrIIF1CqY57fBRQzA01yXH9z6xzL7gKGsGFeEYC">
-						<p>
-							<input type="text" placeholder="Username" name="username" maxlength="150" autocapitalize="none" autocomplete="username" autofocus="" required="" id="id_username">
-						</p>
-						<p>
-							<input type="password" placeholder="Enter Password" name="password1" autocomplete="new-password" required="" id="id_password"> <span class="helptext">
-							</span>
-						</p>
-						<p>
-							<input type="password" placeholder="Confirm Password" name="password2" autocomplete="new-password" required="" id="id_password">
-						</p>
-						<p>Your password must contain at least 8 characters.</p>
-					<button id="login_button">Sign Up</button>
-				</form>
+			<div class="col-sm-6">
+				<div class="panel panel-default">
+					<div class="panel-heading">Sign up</div>
+					<div class="panel-body">
+						<form method="post">
+							{% csrf_token %}
+							{{ form.as_p }}
+							<button type="submit">Sign up</button>
+						</form>
+					</div>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>
