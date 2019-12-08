@@ -22,13 +22,16 @@
 						<a class="nav-link" href="./locations">Locations</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Link 2</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">Link 3</a>
+						{% if user.is_authenticated %}
+						<a class="nav-link" href="./profile">Profile</a>
+						{% else %}
+						{% endif %}
 					</li>
 					<li>
-						<a class="nav-link" href="#">Sign Up</a>
+						{% if user.is_authenticated %}
+						{% else %}
+						<a class="nav-link" href="./signup">Sign Up</a>
+						{% endif %}
 					</li>
 					<li>
 						{% if user.is_authenticated %}
@@ -41,16 +44,6 @@
 
 			</div>
 		</nav>
-		<!-- Reference: calazan.com/adding-basic-search-to-your-djang-site/-->
-		<div class="searchBar">
-			<form id = "searchform" action="{% url 'locations/{{location.id}}' %" method="get" accept-carset="utf-8">
-				<input class="searchfield" id="searchbox" name="q" type="text" placeholder="Search Schools..."></input>
-				<button type="submit" style="background-color:rgb(80, 167, 207)">Submit
-					<i class="fa fa-search"></i>
-				</button>
-			</form>
-		</div>
-		
 		{% block body %}
 		{% endblock %}
 		

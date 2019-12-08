@@ -8,10 +8,27 @@
 	</head>
 	<body>
 		{% block body %}
+			<!-- Reference: calazan.com/adding-basic-search-to-your-djang-site/-->
+			<div class="searchBar">
+				<form id = "searchform" action="{% url 'locations/{{location.id}}' %" method="get" accept-carset="utf-8">
+					<input class="searchfield" id="searchbox" name="q" type="text" placeholder="Search Schools..."></input>
+					<button type="submit" id="submit">Submit<i class="fa fa-search"></i>
+					</button>
+				</form>
+			</div>
 			<div class="container-fluid">
-				{% for school in location.school_set.all %}
-					<a href="/gradmatchapp/locations/{{location.id}}/{{school.id}}">{{ school.school_name }}</a>
-				{% endfor %}
+				<h1>Locations</h1>
+				<div class="schools">
+					{% for school in location.school_set.all %}
+						<li class="a">
+							<span>
+								<a href="/gradmatchapp/locations/{{location.id}}/{{school.id}}">
+									{{ school.school_name }}
+								</a></br>
+							</span>
+						</li>
+					{% endfor %}
+				</div>
 			</div>
 		{% endblock %}
 	</body>
