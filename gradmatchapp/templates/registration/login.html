@@ -7,22 +7,20 @@
 		<title></title>
 	</head>
 	<body id="login_page">
-		<div class="container" id="login_form">
-			<h1> Sign in </h1>
-			<form method = "post">
-				{% csrf_token %}
-				<form method="post">
-					<input type="hidden" name="csrfmiddlewaretoken" value="Y8odMeifRVmGMeq3wSfIsxwft0euKw4zSQprmjogyEvPziWbRIO4HMxls55K2kQg">
-					<p>
-						<input type="text" placeholder="Enter Username" name="username" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" required="" id="id_username">
-					</p>
-					<p>
-						<input type="password" placeholder="Enter Password" name="password" autocomplete="current-password" required="" id="id_password">
-					</p>
-					<button type="submit" id="login_button">Sign in</button>
-				</form>
-			</form>
-		</div>
+		<div class="container">
+			<div class="col-sm-6">
+				<div class="panel panel-default">
+					<div class="panel-heading">Sign in</div>
+					<div class="panel-body">
+						<form method="post">
+							{% csrf_token %}
+							{{ form.as_p }}
+							<input type="submit" name="login">
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>		
 	</body>
 </html>
 
