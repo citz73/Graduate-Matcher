@@ -2,70 +2,62 @@
 
 
 <!DOCTYPE html>
-{% block body %}
 <html>
 	<head>
 		<title></title>
 	</head>
 	<body>
-		<div class="container" id="locations">
-				<div class="col-md-4 profile">
-					<div class="container" id="style">
-						<h1>{{ school.school_name }}</h1>
-					</div>
+		{% block body %}
+			<div class="container" id="locations">
+				<div style='float:center'>
+					<h1>{{ school.school_name }} - School Details</h1>
 					<img src="{{ school.image_url }}" height="420" width="500">
 				</div>
+				<div style='float:left padding:20px'>
+					<div class="table table-dark">
+						<table>
+							<tr>
+								<td>
+									<label><b>Location ID </b></label>
+								</td>
+								<td>{{ school.location_id }}</td>
+							</tr>
+							<tr>
+								<td>
+									<label><b>Area</b></label>
+								</td>
+								<td>{{ school.area }}</td>
+							</tr>
+							<tr>
+								<td>
+									<label><b>Acceptance Rate</b></label>
+								</td>
+								<td>{{ school.acceptance_rate}}</td>
+							</tr>
+							<tr>
+								<td>
+									<label><b>Graduation Rate</b></label>
+								</td>
+								<td>{{ school.acceptance_rate}}</td>
+							</tr>
+							<tr>
+								<td>
+									<label><b>Student Population</b></label>
+								</td>
+								<td>{{ school.student_pop}}</td>
+							</tr>
+							<tr>
+								<td>
+									<label><b>Tuition</b></label>
+								</td>
+								<td>{{ school.tuition}}</td>
+							</tr>
 
-			<div class="col-md-6">
-				<div class="container" id="locations">
-					<h1>School Details</h1>
-					<div class="panel-body">
-						<div class="table table-dark">
-							<table>
-								<tr>
-									<td>
-										<label><b>Location ID </b></label>
-									</td>
-									<td>{{ school.location_id }}</td>
-								</tr>
-								<tr>
-									<td>
-										<label><b>Area</b></label>
-									</td>
-									<td>{{ school.area }}</td>
-								</tr>
-								<tr>
-									<td>
-										<label><b>Acceptance Rate</b></label>
-									</td>
-									<td>{{ school.acceptance_rate}}</td>
-								</tr>
-								<tr>
-									<td>
-										<label><b>Graduation Rate</b></label>
-									</td>
-									<td>{{ school.acceptance_rate}}</td>
-								</tr>
-								<tr>
-									<td>
-										<label><b>Student Population</b></label>
-									</td>
-									<td>{{ school.student_pop}}</td>
-								</tr>
-								<tr>
-									<td>
-										<label><b>Tuition</b></label>
-									</td>
-									<td>{{ school.tuition}}</td>
-								</tr>
-
-							</table>
-						</div>
+						</table>
 					</div>
 				</div>
 			</div>
-		</div>
+		{% endblock %}
 	</body>
 </html>
-{% endblock %}
 
