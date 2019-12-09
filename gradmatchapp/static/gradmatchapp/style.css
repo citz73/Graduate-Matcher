@@ -144,3 +144,8 @@ td, th {
     border-width: thin;
     background-color: white;
 }
+
+#profile {
+    background-color: white;
+    margin: 50px;
+}

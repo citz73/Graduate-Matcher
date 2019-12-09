@@ -10,7 +10,7 @@
 		{% block body %}
 		<div class="row">
 			{% if user.is_authenticated %}
-				<div class="col-4">
+				<div class="col-4" id="profile">
 					<h1>Profile</h1>
 						{{user_info.username}} </br></br>
 						<h6>Major</h6> 
