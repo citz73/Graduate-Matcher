@@ -40,20 +40,10 @@ class UserProfile(models.Model):
     		return self.user.username
    
 	user = models.OneToOneField(User, on_delete=models.CASCADE)
-	school = models.ManyToManyField(School)
-	deadline = models.ManyToManyField(Deadline)
+	school = models.ManyToManyField(School, blank=True)
+	deadline = models.ManyToManyField(Deadline, blank=True)
 	description = models.CharField(max_length=200, default= "")
 	major = models.CharField(max_length=200, default="")
 	expected_Enroll_date = models.CharField(max_length=20, default="")
-
-
-# class User(models.Model):
-	
-# 	def __str__(self):
-# 		return self.user_name
-
-# 	user = models.ForeignKey(models.user, on_delete=models.CASCADE)
-# 	user_name = models.CharField(user.username,max_length=200, default="")
-# 	email_address = models.CharField(max_length=200, default="")
 
 

@@ -43,13 +43,20 @@ def listUserSchool(request):
   	
 def listUserCredential(request):
 	if request.user.is_authenticated:
-		user_deadline = Deadline.objects.filter(userprofile__user = request.user)	
-		user_info = User.objects.get(userprofile__user = request.user)
-		user_credential = UserProfile.objects.get(user = request.user)
+		user_deadline = Deadline.objects.filter(userprofile__user = request.user)
+		if User.objects.filter(userprofile__user = request.user).exists():	
+			user_info = User.objects.get(userprofile__user = request.user)
+		else:
+			user_info = None
+
+		if UserProfile.objects.filter(user = request.user).exists():
+			user_credential = UserProfile.objects.get(user = request.user)
+		else:
+			user_credential = None	
 	else:
-		user_deadline = Deadline.objects.none()
-		user_info = User.objects.none()
-		user_credential = UserProfile.objects.none()
+		user_deadline = None
+		user_info = None
+		user_credential = None
 	context = {'user_deadline': user_deadline, 'user_info': user_info, 'user_credential': user_credential}
 	return render(request, "gradmatchapp/index.html", context)
 
