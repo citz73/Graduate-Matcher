@@ -46,10 +46,15 @@ def listUserSchool(request):
 	user_list = School.objects.filter(userprofile__user = request.user)
 	return render(request, "gradmatchapp/profile.html", {'user_list': user_list})  
   	
-def listUserDeadline(request):
+def listUserCredential(request):
 	if request.user.is_authenticated:
 		user_deadline = Deadline.objects.filter(userprofile__user = request.user)	
+		user_info = User.objects.get(userprofile__user = request.user)
+		user_credential = UserProfile.objects.get(user = request.user)
 	else:
 		user_deadline = Deadline.objects.none()
-	return render(request, "gradmatchapp/index.html", {'user_deadline': user_deadline})
+		user_info = User.objects.none()
+		user_credential = UserProfile.objects.none()
+	context = {'user_deadline': user_deadline, 'user_info': user_info, 'user_credential': user_credential}
+	return render(request, "gradmatchapp/index.html", context)
 
