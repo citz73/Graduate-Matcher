@@ -8,37 +8,58 @@
 		<title></title>
 	</head>
 	<body>
-		<div class="row" background-color="white">
-			<div class="col-md-1"></div>
-
-			<div class="col-md-3">
-				<div class="thumbnail">
-					<img src="{{ school.image_url }}" height="420" width="500">
-					<div class="caption">
-						<p>{{ school.school_name }}</p>
+		<div class="container" id="locations">
+				<div class="col-md-4 profile">
+					<div class="container" id="style">
+						<h1>{{ school.school_name }}</h1>
 					</div>
+					<img src="{{ school.image_url }}" height="420" width="500">
 				</div>
-			</div>
 
-			<div class="col-md-8">
-				<div class="container">
-					<div class="panel-group panel-dark">
-						<div class="panel panel-primary">
-							<div class="panel-heading"><h1>School Details</h1></div>
-							
-							<div class="panel-body">
-								<div class="table table-dark">
-									<tbody>
-										<tr>
-											<td>
-												<label><b>Area Sq. Miles</b></label>
-											</td>
-											
-											<!-- TODO: Add other school attributes -->
-										</tr>
-									</tbody>
-								</div>
-							</div>
+			<div class="col-md-6">
+				<div class="container" id="locations">
+					<h1>School Details</h1>
+					<div class="panel-body">
+						<div class="table table-dark">
+							<table>
+								<tr>
+									<td>
+										<label><b>Location ID </b></label>
+									</td>
+									<td>{{ school.location_id }}</td>
+								</tr>
+								<tr>
+									<td>
+										<label><b>Area</b></label>
+									</td>
+									<td>{{ school.area }}</td>
+								</tr>
+								<tr>
+									<td>
+										<label><b>Acceptance Rate</b></label>
+									</td>
+									<td>{{ school.acceptance_rate}}</td>
+								</tr>
+								<tr>
+									<td>
+										<label><b>Graduation Rate</b></label>
+									</td>
+									<td>{{ school.acceptance_rate}}</td>
+								</tr>
+								<tr>
+									<td>
+										<label><b>Student Population</b></label>
+									</td>
+									<td>{{ school.student_pop}}</td>
+								</tr>
+								<tr>
+									<td>
+										<label><b>Tuition</b></label>
+									</td>
+									<td>{{ school.tuition}}</td>
+								</tr>
+
+							</table>
 						</div>
 					</div>
 				</div>
@@ -47,3 +68,4 @@
 	</body>
 </html>
 {% endblock %}
+

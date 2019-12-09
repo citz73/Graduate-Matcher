@@ -134,3 +134,13 @@ td, th {
     background-color: #ddd;
     outline: none;
 }
+
+.style{
+    width: 80%;
+    height: 20%;
+    margin: 10px auto;
+    padding: 20px;
+    border-style: solid;
+    border-width: thin;
+    background-color: white;
+}
