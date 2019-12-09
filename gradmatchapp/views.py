@@ -3,7 +3,11 @@ from django.urls import reverse_lazy
 from django.contrib.auth.forms import UserCreationForm
 from .models import Deadline, Location, School, User, UserProfile
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
+from datetime import date
+import calendar
+from calendar import HTMLCalendar
+
 # from rest_framework import filters
 # from rest_framework.permissions import IsAuthenticated
 
