@@ -7,7 +7,7 @@ app_name = 'gradmatchapp'
 
 
 urlpatterns = [
-    path('', views.IndexView.as_view(), name='index'),
+    path('', views.listUserDeadline, name='index'),
     path('', include('django.contrib.auth.urls')),
     path('<int:deadline_id>/', views.DetailView.as_view(), name='detail'),
     path('locations', views.LocationsView.as_view(), name='locations'),

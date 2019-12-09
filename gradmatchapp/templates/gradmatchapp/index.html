@@ -9,6 +9,7 @@
 	<body>
 		{% block body %}
 		<div class="row">
+			{% if user.is_authenticated %}
 				<div class="col-4 profile">
 					<h1>Profile</h1>
 				</div>
@@ -23,8 +24,8 @@
 							</tr>
 						</thead>
 						<tbody>
-							{% if deadline_list %}
-								{% for deadline in object_list %}
+							{% if user_deadline %}
+								{% for deadline in user_deadline %}
 									<tr class="active">
 										<td><a href="{% url 'gradmatchapp:detail' deadline.id %}">{{deadline.id}}</a></td>
 										<td><b>{{deadline.name}}</b></td>
@@ -36,7 +37,9 @@
 						</tbody>
 					</table>
 				</div>
+					{% else %}
+					{% endif %}
 		</div>
-		{% endblock %}
+	{% endblock %}
 	</body>
 </html>
