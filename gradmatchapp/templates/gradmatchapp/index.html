@@ -12,6 +12,13 @@
 			{% if user.is_authenticated %}
 				<div class="col-4 profile">
 					<h1>Profile</h1>
+						{{user_info.username}} </br></br>
+						<h6>Major</h6> 
+						{{user_credential.major}} </br></br>
+						<h6>Expected Enrollment Date</h6>
+						{{user_credential.expected_Enroll_date}} </br></br>
+						<h6>Description</h6>
+						{{user_credential.description}} </br></br>
 				</div>
 				<div class="col-6">
 					<table style="width: 100%" class="table table-dark table-hover text-centered">
@@ -24,7 +31,6 @@
 							</tr>
 						</thead>
 						<tbody>
-							{% if user_deadline %}
 								{% for deadline in user_deadline %}
 									<tr class="active">
 										<td><a href="{% url 'gradmatchapp:detail' deadline.id %}">{{deadline.id}}</a></td>
@@ -78,8 +84,6 @@
 						}
 					</script>
 				</div>
-					{% else %}
-					{% endif %}
 		</div>
 	{% endblock %}
 	</body>
