@@ -3,16 +3,11 @@ from django.urls import reverse_lazy
 from django.contrib.auth.forms import UserCreationForm
 from .models import Deadline, Location, School, User, UserProfile
 from django.shortcuts import render
-from django.http import HttpResponse
-# from rest_framework import filters
-# from rest_framework.permissions import IsAuthenticated
-
-
-# class IndexView(generic.ListView):
-# 	template_name = 'gradmatchapp/index.html'
-
-# 	def get_queryset(self):
-# 		return Deadline.objects.all()
+from django.http import HttpResponse, HttpResponseRedirect
+from datetime import date
+import calendar
+from calendar import HTMLCalendar
+from .forms import DeadlineForm
 
 
 class LocationsView(generic.ListView):
@@ -58,3 +53,16 @@ def listUserCredential(request):
 	context = {'user_deadline': user_deadline, 'user_info': user_info, 'user_credential': user_credential}
 	return render(request, "gradmatchapp/index.html", context)
 
+
+def add_deadline(request):
+	submitted = False
+	if request.method == 'POST':
+		form = DeadlineForm(request.POST)
+		if form.is_valid():
+			form.save()
+			return HttpResponseRedirect('/add_deadline/?submitted=True')
+	else:
+		form = DeadlineForm()
+		if 'submitted' in request.GET:
+			submitted = True
+	return render(request, 'gradmatchapp/add_deadline.html', {'form': form, 'submitted': submitted})
