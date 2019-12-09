@@ -15,5 +15,5 @@ urlpatterns = [
     path('locations/<slug:pk>/<int:school_id>', views.SchoolDetail.as_view(), name='schoolview'),
     path('signup', views.SignUpView.as_view(), name= 'signup'),
     path('profile', views.listUserSchool, name = 'profile'),
-    
+    path('add_deadline/', views.add_deadline, name='add-deadline'),
 ]

@@ -7,16 +7,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from datetime import date
 import calendar
 from calendar import HTMLCalendar
-
-# from rest_framework import filters
-# from rest_framework.permissions import IsAuthenticated
-
-
-# class IndexView(generic.ListView):
-# 	template_name = 'gradmatchapp/index.html'
-
-# 	def get_queryset(self):
-# 		return Deadline.objects.all()
+from .forms import DeadlineForm
 
 
 class LocationsView(generic.ListView):
@@ -57,3 +48,16 @@ def listUserDeadline(request):
 		user_deadline = Deadline.objects.none()
 	return render(request, "gradmatchapp/index.html", {'user_deadline': user_deadline})
 
+
+def add_deadline(request):
+	submitted = False
+	if request.method == 'POST':
+		form = DeadlineForm(request.POST)
+		if form.is_valid():
+			form.save()
+			return HttpResponseRedirect('/add_deadline/?submitted=True')
+	else:
+		form = DeadlineForm()
+		if 'submitted' in request.GET:
+			submitted = True
+	return render(request, 'gradmatchapp/add_deadline.html', {'form': form, 'submitted': submitted})
