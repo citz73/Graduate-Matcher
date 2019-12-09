@@ -1,16 +1,24 @@
 {% extends 'gradmatchapp/base.html' %}
 
 <!DOCTYPE html>
-{% block body %}
 <html>
-	<head> User Profile </head>
+	<head></head>
 	<body> 
-		<div class = "list">
-			<h2> School List </h2>
-			{% for object in user_list %}
-			<li> {{object.school_name}}</li>
-			{% endfor %}
-		</div>
+	{% block body %}
+		<div class="container" id="locations">
+		<h1>User Profile</h1>
+			<table>	
+				<tr><th>School List</th></tr>
+				{% for object in user_list %}
+				<tr id = "schools">
+					<td>
+						{{object.school_name}}
+						</br>
+					</td>
+				</tr>
+				{% endfor %}
+				</table>
+			</div>
+		{% endblock %}	
 	</body>
 </html>
-{% endblock %}

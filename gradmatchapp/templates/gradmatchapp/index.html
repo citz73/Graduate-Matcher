@@ -36,6 +36,47 @@
 							{% endif %}
 						</tbody>
 					</table>
+					<button class="open-button" onclick="openForm()">Add Deadline</button>
+					<div class="form-popup" id="myForm">
+						<form action="/login/" class="form-container">
+							{% csrf_token %}
+							{% if next %}
+								<input type="hidden" name="next" value="{{ next }}" />
+							{% endif %}
+							<h1>Enter Deadline</h1>
+							<div class="control-group">
+								<div class="controls">
+									<input type="password" id="Name" name="Name"  placeholder="Name">
+								</div>
+							</div>
+							<div class="control-group">
+								<div class="controls">
+									<input type="password" name="Priority" id="Priority" placeholder="Priority">
+								</div>
+							</div>
+							<div class="control-group">
+									<div class="controls">
+										<input type="password" name="Date" id="Date" placeholder="Date">
+									</div>
+							</div>
+							<div class="control-group">
+								<div class="controls">
+									<button type="submit" class="btn">Add Deadline</button>
+								</div>
+								<div class="controls">
+									<button type="button" class="btn cancel" onclick="closeForm()">Cancel</button>
+								</div>
+							</div>
+						</form>
+					</div>
+					<script>
+						function openForm(){
+							document.getElementById("myForm").style.display = "block";
+						}
+						function closeForm() {
+							document.getElementByID("myForm").style.display = "none";
+						}
+					</script>
 				</div>
 					{% else %}
 					{% endif %}
