@@ -73,3 +73,5 @@ def add_deadline(request):
 		if 'submitted' in request.GET:
 			submitted = True
 	return render(request, 'gradmatchapp/add_deadline.html', {'form': form, 'submitted': submitted})
+
+	# safe check
